@@ -1,3 +1,4 @@
+// JS File purely to test the website.
 const express = require("express");
 const path = require("path");
 
