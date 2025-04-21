@@ -2,7 +2,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>ceraia</title>
+  <title>Ceraia</title>
   <link rel="shortcut icon" href="favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Ceraia, a creative project by Axodouble.">
@@ -22,7 +22,7 @@
       display: grid;
       place-content: center;
       place-items: center;
-      gap: 1rem;
+      gap: .5rem;
     }
 
     a {
@@ -419,28 +419,48 @@
     </g>
   </svg>
   <span>
-    <a target="_blank" rel="noopener" href="https://ceraia.com/">ceraia</a>
-    <a target="_blank" rel="noopener" class="github" href="https://github.com/Ceraia/Website"></a>
+    <a target="_blank" rel="noopener" href="https://github.com/Ceraia/Website">Ceraia</a>;<br>
   </span>
   <span>
-    a creative project by <a target="_blank" rel="noopener" href="https://axodouble.com">axodouble</a>;
+    <div>A creative project by Jasper "Axodouble"</div>
   </span>
   <span>
-    use the <a target="_blank" rel="noopener"
-      href="https://discord.com/oauth2/authorize?client_id=758776071268859946&permissions=1759218604441599&integration_type=0&scope=bot+applications.commands">discord
+    <a href="#" onclick="toggleContent('about')">About</a>;
+    <a href="#" onclick="toggleContent('contact')">Contact</a>;
+    <a href="#" onclick="toggleContent('services')">Services</a>;
+  </span>
+  <span>
+    <div id="about" style="display: none;">Ceraia is a creative project started in March, 2024 by Jasper "Axodouble",<br>
+      This project was started in an effort to consistently brand personal or shared projects involving community members.</div>
+    <div id="contact" style="display: none;">Contact us via <a href="mailto:jasper+contact@ceraia.com">mail</a>.</div>
+  </span>
+  <span id="services" style="display: none;">
+    Utilize the <a target="_blank" rel="noopener"
+      href="https://discord.com/oauth2/authorize?client_id=758776071268859946&permissions=1759218604441599&integration_type=0&scope=bot+applications.commands">Discord
       bot</a>;
     <a target="_blank" rel="noopener" class="github" href="https://github.com/Ceraia/Discord"></a>
+    <br>
+    Join the <a target="_blank" rel="noopener" href="https://discord.gg/b2umYwXreR">Discord community</a>;
+    <br>
+    View Ceraia's services <a target="_blank" rel="noopener" href="https://uptime.ceraia.com/">uptime</a>;
+    <br>
   </span>
-  <span>
-    the <a target="_blank" rel="noopener" href="https://github.com/Ceraia/Minecraft">minecraft plugin</a>;
-    <a target="_blank" rel="noopener" class="github" href="https://github.com/Ceraia/Minecraft"></a>
-  </span>
-  <span>
-    join the <a target="_blank" rel="noopener" href="https://discord.gg/b2umYwXreR">discord community</a>;
-  </span>
-  <span>
-    view <a target="_blank" rel="noopener" href="https://uptime.ceraia.com/">uptime</a>;
-  </span>
+  <script>
+    const toggledContent = [];
+
+    function toggleContent(id) {
+      toggledContent.forEach((contentId) => {
+        if (contentId !== id) {
+          const otherElement = document.getElementById(contentId);
+          otherElement.style.display = 'none';
+        }
+      });
+      toggledContent.push(id);
+
+      const element = document.getElementById(id);
+      element.style.display = element.style.display === 'none' ? 'block' : 'none';
+    }
+  </script>
 </body>
 
 </html>
